@@ -79,7 +79,7 @@ class Blockchain():
 #for testing purposes
 def main():
     blockchain = Blockchain()
-    database = ["hello", "goodbye", "test", "DATA here"]
+    database = ["Lokmane", "Zitouni", "Laza", "L9zan"]
 
     num = 0
 
@@ -95,6 +95,7 @@ def main():
     blockchain.chain[2].data = "NEW DATA"
     blockchain.mine(blockchain.chain[2])
     print(blockchain.isValid())
+    print(blockchain.chain[2])
 
 
 if __name__ == '__main__':
