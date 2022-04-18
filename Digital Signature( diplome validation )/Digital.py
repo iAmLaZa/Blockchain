@@ -1,7 +1,7 @@
 import hashlib
 import rsa
 #pip intall rsa
-
+#pip install flask-mysqldb
 
 def createsignature(message, pubkey, prikey):
     crypto=rsa.encrypt(message, pubkey)
@@ -41,3 +41,27 @@ if __name__ == '__main__':
     #decrypt signature
     print('the original message is :')
     decryptsignature(messg,pubkey,privkey)
+
+    # fenetreA():
+    # get matricule
+    # etudiant recherche par matricule ()
+    # genere certificat(data etudiant)
+    # hashé et signi certificat
+    # passe data lokman pour cree le block
+    # ajouter le block
+    #
+    #
+    # fenetreB():
+    # get pdf
+    # hash pdf
+    # cherche dans blockchain sur le hash
+    # verifie la transaction
+    # valider le pdf
+    # afficher le resultat de validation
+    #
+
+
+
+
+
+
