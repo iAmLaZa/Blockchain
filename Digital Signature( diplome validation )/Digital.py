@@ -28,7 +28,7 @@ if __name__ == '__main__':
 
     #creating hash for file
     print('the hash of file is: ')
-    path = r'fichierpdf.pdf'
+    path = r'./fichierpdf.pdf'
     hashedfile=hashfiles(path)
     cryptedhash = str.encode(hashedfile)
 
