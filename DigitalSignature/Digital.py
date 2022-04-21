@@ -1,8 +1,9 @@
 import hashlib
 import rsa
+from CreateDiploma import *
 #pip intall rsa
 #pip install flask-mysqldb
-
+#pip install pyqt5-tools
 def createsignature(message, pubkey, prikey):
     crypto=rsa.encrypt(message, pubkey)
     return (crypto)
@@ -23,37 +24,34 @@ def hashfiles(path):
 
 if __name__ == '__main__':
     (pubkey,privkey)=rsa.newkeys(1024)
-    print(type(pubkey))
-    print(type(privkey))
-
+    # print(type(pubkey))
+    # print(type(privkey))
+    #creaing the file
+    CreateDiplomat(['Wail', 'Alouane', '20', 'Boumerdes', 'SSI', 'USTHB'])
     #creating hash for file
     print('the hash of file1 is: ')
-    path = r'ibrahim_Ghozlane_file.pdf'
+    path = r'Wail_Alouane_file.pdf'
     hashedfile=hashfiles(path)
     cryptedhash = str.encode(hashedfile)
 
-    print('the hash of file1 is: ')
 
-    path = r'ibrahim_Ghozlane_fil.pdf'
-    hashedfile=hashfiles(path)
-    cryptedhash = str.encode(hashedfile)
 
     #crypthash
     messg=createsignature(cryptedhash, pubkey, privkey)
-    print('the signature is :')
-    print(messg)
+    # print('the signature is :')
+    # print(messg)
 
     #decrypt signature
-    print('the original message is :')
-    decryptsignature(messg,pubkey,privkey)
+    # print('the original message is :')
+    # decryptsignature(messg,pubkey,privkey)
 
     # fenetreA():
     # get matricule
     # etudiant recherche par matricule ()
-    # genere certificat(data etudiant)
-    # hashé et signi certificat
-    # passe data lokman pour cree le block
-    # ajouter le block
+    # genere certificat(data etudiant) DONE
+    # hashé et signi certificat   DONE
+    # passe data lokman pour cree le block ...
+    # ajouter le block ...
     #
     #
     # fenetreB():
@@ -61,7 +59,7 @@ if __name__ == '__main__':
     # hash pdf
     # cherche dans blockchain sur le hash
     # verifie la transaction
-    # valider le pdf
+    # valider le pdf 
     # afficher le resultat de validation
     #
 
