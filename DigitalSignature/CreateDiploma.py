@@ -9,7 +9,7 @@ def CreateDiplomat(cordonnee_array):
     # add a new Page
     pdf.add_page()
     # adding font
-    pdf.add_font('sysfont','',r'D:\Coding\Blockchain\Russo_One.ttf',uni=True)
+    pdf.add_font('sysfont','',r'Russo_One.ttf',uni=True)
     pdf.set_font('sysfont','',36)
     pdf.set_text_color(95, 97, 96)
     # the background      

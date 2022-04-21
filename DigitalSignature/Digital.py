@@ -27,11 +27,16 @@ if __name__ == '__main__':
     print(type(privkey))
 
     #creating hash for file
-    print('the hash of file is: ')
-    path = r'./fichierpdf.pdf'
+    print('the hash of file1 is: ')
+    path = r'ibrahim_Ghozlane_file.pdf'
     hashedfile=hashfiles(path)
     cryptedhash = str.encode(hashedfile)
 
+    print('the hash of file1 is: ')
+
+    path = r'ibrahim_Ghozlane_fil.pdf'
+    hashedfile=hashfiles(path)
+    cryptedhash = str.encode(hashedfile)
 
     #crypthash
     messg=createsignature(cryptedhash, pubkey, privkey)

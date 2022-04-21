@@ -18,8 +18,8 @@ class Etudiant():
 
     def rechercheEtudiant(self, matricule):
         print('recherche par matricule dans data base ....')
-        self.nom='wail'
-        self.prenom='wail'
+        self.nom='etud1'
+        self.prenom='etud1'
         self.matricule='11111'
         self.specialite='info'
         self.universite='usthb'
