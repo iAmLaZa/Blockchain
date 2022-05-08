@@ -1,0 +1,54 @@
+{% if session.get('type')=='admin' %} {%extends 'layout.html' %}
+{% else  %} {% extends 'layout_simple.html' %}
+{% endif %}
+
+{% block body %}
+<h1>Welcome back, {{session.get('name')}}</h1>
+{% include 'includes/_messages.html' %}
+<p></p>
+
+
+
+<!-- DataTables Example -->
+<div class="card mb-3">
+  <div class="card-header">
+    <i class="fas fa-table"></i>
+    Blockchain</div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>diplôme</th>
+            <th>Hash</th>
+            <th>Previous Hash</th>
+            <th>Nonce</th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <th>#</th>
+            <th>diplôme</th>
+            <th>Hash</th>
+            <th>Previous Hash</th>
+            <th>Nonce</th>
+          </tr>
+        </tfoot>
+        <tbody>
+          {% for block in blockchain %}
+            <tr>
+              <td>{{block.number}}</td>
+              <td>{{block.data}}</td>
+              <td>{{block.hash()}}</td>
+              <td>{{block.previous_hash}}</td>
+              <td>{{block.nonce}}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card-footer small text-muted">Updated today at {{ct}}</div>
+</div>
+{% endblock %}

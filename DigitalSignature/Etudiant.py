@@ -1,26 +1,22 @@
 class Etudiant():
-    def __init__(self,nom,prenom, matricule, specialite, universite):
-        self.nom = nom
-        self.prenom = prenom
+    
+    def __init__(self,familyname,lastname, matricule, email ,date,place,major):
+        self.familyname = familyname
+        self.lastname = lastname
         self.matricule = matricule
-        self.specialite = specialite
-        self.universite = universite
+        self.email = email
+        self.date=date
+        self.place = place
+        self.major = major
+        
 
     def __str__(self):
-        return str("Etudiant: %s\nnom: %s\nprenom: %s\nmatricule: %s\nspecialite: %s\n" %(
-            self.nom,
-            self.prenom,
+        return str("Etudiant: %s\nnom: %s\nprenom: %s\nmatricule: %s\nmajor: %s\n" %(
+            self.familyname,
+            self.lastname,
             self.matricule,
-            self.specialite
+            self.major
 
             )
         )
-
-    def rechercheEtudiant(self, matricule):
-        print('recherche par matricule dans data base ....')
-        self.nom='etud1'
-        self.prenom='etud1'
-        self.matricule='11111'
-        self.specialite='info'
-        self.universite='usthb'
-        return self
+        

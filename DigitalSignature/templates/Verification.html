@@ -1,0 +1,17 @@
+{% if session.get('type')=='admin' %} {%extends 'layout.html' %}
+{% else  %} {% extends 'layout_simple.html' %}
+{% endif %}
+
+{% block body %}
+{% include 'includes/_messages.html' %}
+<p>Upload Diploma to auto verification with our System Vérifini</p>
+{% from "includes/_formhelpers.html" import render_field %}
+<form method="POST" action="">
+  <div class="from-group">
+    {{render_field(form.diplome, class_="form-control")}}
+  </div>
+  
+  <br>
+  <p><input type="submit" class="btn btn-primary" value="Vérifini"></p>
+</form>
+{% endblock %}

@@ -1,0 +1,66 @@
+{% if session.get('type')=='admin' %} {%extends 'layout.html' %}
+{% else  %} {% extends 'layout_simple.html' %}
+{% endif %}
+
+{% block body %}
+{% include 'includes/_messages.html' %}
+{% from "includes/_formhelpers.html" import render_field %}
+
+<form action="" method="POST">
+  <div class="form-group">
+    <div class="form-label-group">
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col-md-6">
+                <div class="form-label-group">
+                  <input type="text" id="inputNamilyname" name="familyname" class="form-control" placeholder="Family Name" required="required" autofocus="autofocus" value={{request.form.familyname}}>
+                  <label for="inputNamilyname">Family Name</label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-label-group">
+                  <input type="text" id="inputLastname" name="lastname" class="form-control" placeholder="Last Name" required="required" autofocus="autofocus" value={{request.form.lastname}}>
+                  <label for="inputLastname">Last Name</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-label-group">
+              <input type="text" id="inputMatricule" name="matricule" class="form-control" placeholder="Matricule" required="required" autofocus="autofocus" value={{request.form.matricule}}>
+              <label for="inputMatricule">Matricule</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-label-group">
+              <input type="text" id="inputEmail" name="email" class="form-control" placeholder="Email" required="required" autofocus="autofocus" value={{request.form.email}}>
+              <label for="inputEmail">Email address</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col-md-6">
+                <div class="form-label-group">
+                  <input type="text" id="inputDate" name="date" class="form-control" placeholder="Date Of Birth dd/mm/yyyy" required="required" autofocus="autofocus" value={{request.form.date}}>
+                  <label for="inputDate">Date Of Birth dd/mm/yyyy</label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-label-group">
+                  <input type="text" id="inputPlace" name="place" class="form-control" placeholder="Place Of Birth" required="required" autofocus="autofocus" value={{request.form.place}}>
+                  <label for="inputPlace">Place Of Birth</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-label-group">
+              <input type="text" id="inputMajor" name="major" class="form-control" placeholder="Major" required="required" autofocus="autofocus" value={{request.form.major}}>
+              <label for="inputMajor">Major</label>
+            </div>
+          </div> 
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary btn-block">ADD</button>
+</form>
+{% endblock %}

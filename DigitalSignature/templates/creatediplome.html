@@ -1,0 +1,20 @@
+{% if session.get('type')=='admin' %} {%extends 'layout.html' %}
+{% else  %} {% extends 'layout_simple.html' %}
+{% endif %}
+
+{% block body %}
+{% include 'includes/_messages.html' %}
+<h1>Enter The student Matricule you want to create his Diploma and add to the BlockChain</h1>
+{% from "includes/_formhelpers.html" import render_field %}
+<form action="" method="POST">
+  <div class="form-group">
+    <div class="form-label-group">
+      {{render_field(form.matricule, class_="form-control")}}
+    </div>
+    <div class="form-label-group">
+      {{render_field(form.mention, class_="form-control")}}
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary btn-block">ADD DIPLOMA NOW</button>
+</form>
+{% endblock %}
