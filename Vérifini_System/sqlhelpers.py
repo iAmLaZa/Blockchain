@@ -2,7 +2,7 @@ from app import mysql, session
 from blockchain import Block, Blockchain ,updatehash
 from hashpdf import hashpdf
 from CreateDiploma import CreateDiplomat
-#from ExtractCoordinates import Extract 
+from ExtractCoordinates import Extract 
 
 
 #custom exceptions for transaction errors
@@ -139,19 +139,21 @@ def add_diplome(university, student_mat,mention):
 #diplome_Verification
 
 def diplome_Verification(diplome): 
-    #diplome_data = Extract(diplome)
-    #hna lzm diplome data fih familyname , lastname ,,                  university  (meme ordre kima ta3 updatehash ta3 create diploma ligne 133)
-    #diplome_hash = updatehash(diplome_data)
+    diplome_data = Extract(diplome)
+
+    diplome_hash = updatehash(diplome_data[0],diplome_data[1],diplome_data[2],diplome_data[3],diplome_data[4],diplome_data[5],diplome_data[6],diplome_data[7])
     
     #verify that the Student has already a diplome and block in the blockchain
-    #if get_diplome(student_mat) == '':
-    #    raise InsufficientFundsException("Student has not  already a diploma and block in our BlockChain --> ADD Diploma ")
+    if isnewstudent(diplome_data[2]):
+        raise InvalidTransactionException("Student Does Not Exist.")
+    elif get_diplome(diplome_data[2]) == '':
+        raise InsufficientFundsException("Student has not  already a diploma and block in our BlockChain --> ADD Diploma ")
     
     #verify that the student exists
-    #elif isnewstudent(student_mat):
-    #    raise InvalidTransactionException("Student Does Not Exist.")
-    #return False if diplome_hash != get_diplome(diplome_data->matricule) else True
-    pass
+    elif isnewstudent(diplome_data[2]):
+        raise InvalidTransactionException("Student Does Not Exist.")
+    return False if diplome_hash != get_diplome(diplome_data[2]) else True
+    
 #get the diplome of a student
 def get_diplome(mat):
     diplome = ''
@@ -162,6 +164,7 @@ def get_diplome(mat):
         data = block.data.split("-->")
         if mat == data[1]:
             diplome = data[2]
+            break
     return diplome
 
 #get the blockchain from mysql and convert to Blockchain object

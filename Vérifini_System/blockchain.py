@@ -95,30 +95,3 @@ class Blockchain():
         return True
 
 
-#for testing purposes
-def main():
-    blockchain = Blockchain()
-    
-    lokcertif='C:/Users/Sos/Desktop/____/Github/Blockchain/Digital Signature( diplome validation )/2.pdf'
-    wailcertif='C:/Users/Sos/Desktop/____/Github/Blockchain/Digital Signature( diplome validation )/1.pdf' 
-    database = [["Lokmane","Zitouni","USTHB","181831091028",readPDF(lokcertif)],["WAil Zinedine","Alouane","USTHB","181831032956",readPDF(wailcertif)]]
-
-    num = 0
-
-    for data in database:
-        num += 1
-        blockchain.mine(Block(num, data=data))
-
-    for block in blockchain.chain:
-        print(block)
-
-    print(blockchain.isValid())
-
-    blockchain.chain[1].data[4] = readPDF(lokcertif)
-    blockchain.mine(blockchain.chain[1])
-    print(blockchain.isValid())
-    print(blockchain.chain[1])
-
-
-if __name__ == '__main__':
-    main()

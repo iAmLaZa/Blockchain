@@ -1,0 +1,10 @@
+Les packages :
+	pip install fpdf2
+	pip intall rsa
+	pip install pdfplumber
+	pip install flask-mysqldb
+	pip install flask
+	pip install flask_mysqldb
+	pip install passlib
+	pip install wtforms
+	pip install hashlib

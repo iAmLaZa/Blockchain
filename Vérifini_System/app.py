@@ -202,7 +202,6 @@ def logout():
 @is_logged_in
 def dashboard():
     blockchain = get_blockchain().chain
-    print(blockchain[0])
     ct = time.strftime("%I:%M %p")
     return render_template('dashboard.html',  session=session, ct=ct, blockchain=blockchain, page='dashboard')
 

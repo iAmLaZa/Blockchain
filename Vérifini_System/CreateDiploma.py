@@ -27,4 +27,3 @@ def CreateDiplomat(cordonnee_array):
 
     # creates a pdf file with name of the owner of the pdf
     pdf.output('{}_{}_file.pdf'.format(cordonnee_array[0],cordonnee_array[1]))
-
