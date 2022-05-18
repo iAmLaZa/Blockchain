@@ -9,11 +9,11 @@ def CreateDiplomat(cordonnee_array):
     # add a new Page
     pdf.add_page()
     # adding font
-    pdf.add_font('sysfont','',r'./Russo_One.ttf',uni=True)
+    pdf.add_font('sysfont','',r'./Modele/Russo_One.ttf',uni=True)
     pdf.set_font('sysfont','',34)
     pdf.set_text_color(95, 97, 96)
     # the background      
-    pdf.image(r'Certificate.jpg',x=0,y=0,w=297,h=210,type='',link='')
+    pdf.image(r'./Modele/Certificate.jpg',x=0,y=0,w=297,h=210,type='',link='')
     j=0
     
     pdf.cell(w=80,h=30,ln=True)
@@ -26,4 +26,4 @@ def CreateDiplomat(cordonnee_array):
         j+=1
 
     # creates a pdf file with name of the owner of the pdf
-    pdf.output('{}_{}_file.pdf'.format(cordonnee_array[0],cordonnee_array[1]))
+    pdf.output('./Diploma/{}_{}_file.pdf'.format(cordonnee_array[0],cordonnee_array[1]))
